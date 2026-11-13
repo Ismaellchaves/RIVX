@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Conheça todos os modelos da coleção The Drip.">
+  <title>THE DRIP — Modelos</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="intro-active" data-catalog-page="all">
+  <div class="intro-screen is-active" id="intro-screen" role="status" aria-label="The Drip">
+    <div class="intro-content">
+      <img class="intro-logo" src="assets/the-drip-logo.png" alt="The Drip">
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="index.html" aria-label="The Drip — início">
+        <img src="assets/the-drip-logo.png" alt="The Drip">
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="#catalog" aria-current="page">Modelos</a>
+        <a href="index.html#drops">Lançamentos</a>
+        <a href="index.html#contact">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <button class="bag-button" id="open-cart" type="button" aria-label="Abrir sacola, 0 itens">
+          <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+          <span class="bag-count" id="bag-count">0</span>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="catalog-page">
+    <section class="catalog section" id="catalog">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow"><span class="eyebrow-line"></span> A COLEÇÃO COMPLETA</span>
+            <h2>Mais modelos<span class="heading-dot">.</span></h2>
+          </div>
+          <p>Encontre o modelo que combina com o seu jeito.</p>
+        </div>
+        <div class="catalog-toolbar">
+          <div class="catalog-filters" role="group" aria-label="Filtrar produtos">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+            <button class="filter-button" type="button" data-filter="solar" aria-pressed="false">Solar</button>
+            <button class="filter-button" type="button" data-filter="grau" aria-pressed="false">Grau</button>
+            <button class="filter-button" type="button" data-filter="limited" aria-pressed="false">Limited</button>
+          </div>
+          <span class="catalog-count" id="catalog-count" aria-live="polite"></span>
+        </div>
+        <div class="product-grid" id="product-grid"></div>
+        <a class="button button-outline see-more" id="see-more" href="modelos.html" hidden>Ver mais modelos</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <a class="footer-brand" href="index.html" aria-label="The Drip — início"><img src="assets/the-drip-logo.png" alt="The Drip"></a>
+      <span>ÓCULOS · ESTILO · ATITUDE</span>
+      <span>© <span id="current-year"></span> THE DRIP. Todos os direitos reservados.</span>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="product-modal" hidden>
+    <section class="product-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+      <button class="icon-button dialog-close" type="button" data-close-modal aria-label="Fechar detalhes"><i class="fas fa-times" aria-hidden="true"></i></button>
+      <div class="dialog-image"><img id="modal-image" src="" alt=""></div>
+      <div class="dialog-copy">
+        <span class="eyebrow"><span class="eyebrow-line"></span> THE DRIP ORIGINAL</span>
+        <h2 id="modal-name"></h2>
+        <p class="dialog-price" id="modal-price"></p>
+        <p class="dialog-description" id="modal-description"></p>
+        <button class="button button-light" id="modal-add" type="button">Adicionar à sacola <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop cart-backdrop" id="cart-modal" hidden>
+    <section class="cart-dialog" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+      <div class="cart-header">
+        <div><span class="eyebrow"><span class="eyebrow-line"></span> SEU PEDIDO</span><h2 id="cart-title">Sacola<span class="heading-dot">.</span></h2></div>
+        <button class="icon-button" type="button" data-close-modal aria-label="Fechar sacola"><i class="fas fa-times" aria-hidden="true"></i></button>
+      </div>
+      <div class="cart-items" id="cart-items" aria-live="polite"></div>
+      <div class="cart-footer">
+        <div class="cart-total"><span>Total</span><strong id="cart-total">R$ 0,00</strong></div>
+        <a class="button button-light checkout-button is-disabled" id="checkout-button" href="#" target="_blank" rel="noreferrer" aria-disabled="true">
+          Enviar pedido pelo WhatsApp <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <p class="checkout-note">Seu pedido será enviado como uma comanda com os modelos, quantidades e total.</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
