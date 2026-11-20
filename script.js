@@ -60,7 +60,7 @@ function initGlassesViewer() {
     window.clearTimeout(frameChangeTimer);
     frameChangeTimer = window.setTimeout(() => {
       image.src = view.src;
-      image.alt = `Óculos The Drip visto ${view.label}`;
+      image.alt = `Óculos RIVX visto ${view.label}`;
       angleLabel.textContent = `${view.angle}°`;
       window.requestAnimationFrame(() => image.classList.remove("is-changing"));
     }, 90);
@@ -164,7 +164,7 @@ const products = [
     priceCents: 45900,
     description: "Óculos de sol preto com lentes escuras. Um visual marcante, urbano e sem esforço.",
     image: "assets/glasses-angles/angle-01.png",
-    tag: "THE DRIP",
+    tag: "RIVX",
   },
   {
     id: 2,
@@ -180,7 +180,7 @@ const products = [
     name: "VANDAL",
     category: "limited",
     priceCents: 62900,
-    description: "Edição limitada com estrutura leve e design de presença. Exclusividade THE DRIP.",
+    description: "Edição limitada com estrutura leve e design de presença. Exclusividade RIVX.",
     image: "https://images.unsplash.com/photo-1577803645773-f96470509666?w=700&q=85&auto=format&fit=crop",
     tag: "LIMITED",
   },
@@ -322,7 +322,7 @@ function updateCartQuantity(productId, change) {
 }
 
 function buildOrderMessage() {
-  const orderLines = ["Olá! Gostaria de fazer este pedido na THE DRIP:", ""];
+  const orderLines = ["Olá! Gostaria de fazer este pedido na RIVX:", ""];
   let total = 0;
 
   for (const [productId, quantity] of cart) {
